@@ -32,3 +32,5 @@ generate_data.py
 
 # Internal answers (not for candidates)
 answers/
+
+local.duckdb

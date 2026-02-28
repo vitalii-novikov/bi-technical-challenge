@@ -22,3 +22,11 @@ The `data/` folder contains four CSV files:
 ## Questions?
 
 Email [heiko@flinncomply.com](mailto:heiko@flinncomply.com).
+
+
+## Job groups by lifecycle stage
+
+![Job groups by lifecycle stage](outputs/job_groups_by_stage.png)
+
+**Interactive version (hover tooltips):**  
+Open `docs/job_groups_by_stage.html` via GitHub Pages.

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-54d7a85d3ae6ec9a0e3b30534ad2d219"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "job_group", "sort": ["Leadership", "Regulatory/Clinical", "Quality/Risk", "Product/Tech/Other"], "title": "Job group", "type": "nominal"}, "order": {"field": "job_group", "sort": "ascending", "type": "nominal"}, "tooltip": [{"field": "lifecycle_stage", "title": "Stage", "type": "nominal"}, {"field": "job_group", "title": "Job group", "type": "nominal"}, {"field": "n_contacts", "title": "Contacts", "type": "quantitative"}, {"field": "stage_total", "title": "Stage total", "type": "quantitative"}, {"field": "pct_within_stage", "format": ".1%", "title": "Share", "type": "quantitative"}], "x": {"field": "lifecycle_stage", "sort": ["lead", "opportunity", "customer"], "title": "Lifecycle stage", "type": "nominal"}, "y": {"field": "pct_within_stage", "stack": "normalize", "title": "Share of contacts (normalized)", "type": "quantitative"}}, "height": 420, "title": "Job groups by lifecycle stage (normalized stacked bars)", "width": 420, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-54d7a85d3ae6ec9a0e3b30534ad2d219": [{"lifecycle_stage": "lead", "job_group": "Leadership", "n_contacts": 104, "stage_total": 315.0, "pct_within_stage": 0.33015873015873015, "pct_label": "33.0%"}, {"lifecycle_stage": "lead", "job_group": "Product/Tech/Other", "n_contacts": 43, "stage_total": 315.0, "pct_within_stage": 0.1365079365079365, "pct_label": "13.7%"}, {"lifecycle_stage": "lead", "job_group": "Quality/Risk", "n_contacts": 54, "stage_total": 315.0, "pct_within_stage": 0.17142857142857143, "pct_label": "17.1%"}, {"lifecycle_stage": "lead", "job_group": "Regulatory/Clinical", "n_contacts": 114, "stage_total": 315.0, "pct_within_stage": 0.3619047619047619, "pct_label": "36.2%"}, {"lifecycle_stage": "opportunity", "job_group": "Leadership", "n_contacts": 14, "stage_total": 37.0, "pct_within_stage": 0.3783783783783784, "pct_label": "37.8%"}, {"lifecycle_stage": "opportunity", "job_group": "Product/Tech/Other", "n_contacts": 1, "stage_total": 37.0, "pct_within_stage": 0.02702702702702703, "pct_label": "2.7%"}, {"lifecycle_stage": "opportunity", "job_group": "Quality/Risk", "n_contacts": 6, "stage_total": 37.0, "pct_within_stage": 0.16216216216216217, "pct_label": "16.2%"}, {"lifecycle_stage": "opportunity", "job_group": "Regulatory/Clinical", "n_contacts": 16, "stage_total": 37.0, "pct_within_stage": 0.43243243243243246, "pct_label": "43.2%"}, {"lifecycle_stage": "customer", "job_group": "Leadership", "n_contacts": 50, "stage_total": 137.0, "pct_within_stage": 0.36496350364963503, "pct_label": "36.5%"}, {"lifecycle_stage": "customer", "job_group": "Product/Tech/Other", "n_contacts": 23, "stage_total": 137.0, "pct_within_stage": 0.1678832116788321, "pct_label": "16.8%"}, {"lifecycle_stage": "customer", "job_group": "Quality/Risk", "n_contacts": 36, "stage_total": 137.0, "pct_within_stage": 0.26277372262773724, "pct_label": "26.3%"}, {"lifecycle_stage": "customer", "job_group": "Regulatory/Clinical", "n_contacts": 28, "stage_total": 137.0, "pct_within_stage": 0.20437956204379562, "pct_label": "20.4%"}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
