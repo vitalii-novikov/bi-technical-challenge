@@ -1,3 +1,12 @@
+**Data privacy note:** The dataset was **never shared with or accessible to any AI tool**. All AI assistance was limited to general guidance, code scaffolding, and write-up phrasing; all analysis was performed locally on my machine.
+
+## AI usage note 
+
+- **ChatGPT:** generated the initial EDA outline and DuckDB setup (see `AI_generated_parts/` in the project).
+- **GitHub Copilot:** used for a minor code fixes and comments in `main.ipynb`, plus generating code for the final visualization.
+- **ChatGPT:** helped refine and write a concise final write-up.
+
+
 ## Q1: How many customers do we have today?
 
 **Assumption:** “Customers today” = companies with **active deals** (not just records marked as `customers` in `hubspot_contacts`).
@@ -60,3 +69,4 @@
 [LINK](https://vitalii-novikov.github.io/bi-technical-challenge/job_groups_by_stage.html)
 
 ![Job groups by lifecycle stage](outputs/job_groups_by_stage.png)
+
