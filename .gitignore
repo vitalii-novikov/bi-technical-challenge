@@ -34,3 +34,4 @@ generate_data.py
 answers/
 
 local.duckdb
+local.duckdb.wal
